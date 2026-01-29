@@ -13,7 +13,7 @@ As I pivot from on-prem home labs (IPFire/Wazuh) into Cloud Security, this lab f
 
 ### 1. Defining the Perimeter
 I created a **Named Location** within Microsoft Entra ID. This allows the tenant to recognize specific IP ranges or countries as "Trusted" or "Targeted."
-> ![Defining Geographic Network Perimeters](images/Defining Geographic Network Perimeters.png)
+> ![Defining Geographic Network Perimeters](images/image1.png)
 
 ### 2. Policy Configuration
 The policy logic was set to:
@@ -21,7 +21,7 @@ The policy logic was set to:
 * **What:** All Cloud Apps.
 * **Where:** Any location *except* my designated safe countries.
 * **Result:** Block Access.
-> *![Policy Configuration](images/Policy Configuration Geo-blocking Logic.png)*
+> *![Policy Configuration](images/image2.png)*
 
 ---
 
