@@ -13,7 +13,7 @@ As I pivot from on-prem home labs (IPFire/Wazuh) into Cloud Security, this lab f
 
 ### 1. Defining the Perimeter
 I created a **Named Location** within Microsoft Entra ID. This allows the tenant to recognize specific IP ranges or countries as "Trusted" or "Targeted."
-> ![Defining Geographic Network Perimeters](images/image1.png)
+> ![Defining Geographic Network Perimeters](Images/image1.png)
 
 ### 2. Policy Configuration
 The policy logic was set to:
@@ -21,7 +21,7 @@ The policy logic was set to:
 * **What:** All Cloud Apps.
 * **Where:** Any location *except* my designated safe countries.
 * **Result:** Block Access.
-> *![Policy Configuration](images/image2.png)*
+> *![Policy Configuration](Images/image2.png)*
 
 ---
 
@@ -31,7 +31,7 @@ The policy logic was set to:
 One major hurdle I encountered: **You cannot use Conditional Access while "Security Defaults" are enabled.** * Security Defaults provide a basic level of protection but are an "all-or-nothing" setting. To use granular CA policies, these must be turned off.
 * **Location:** `Overview` > `Properties` > `Manage Security Defaults` (at the bottom of the page).
 
-### The Cache/Propagation Trap
+### The Cache Trap
 **Critical Tip:** After disabling Security Defaults, Azure may still throw an error when you try to save your new CA policy. 
 * **The Fix:** Don't panic and keep clicking save, you need to **log out, clear your browser cache, and log back in**. This forces the portal to recognize the updated tenant state and allows the policy to be created successfully.
 
