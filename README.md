@@ -6,10 +6,10 @@ As I pivot from on-prem home labs (IPFire/Wazuh) into Cloud Security, this lab f
 ##  Technical Stack
 * **Cloud Provider:** Microsoft Azure
 * **Identity Service:** Microsoft Entra ID (Azure AD)
-* **Security Tool:** Conditional Access Policies
+* **Security Tool(s):** Conditional Access & Policies
 * **Focus:** Geo-blocking & Zero Trust Identity
 
-## 🚀 The Build Process
+## The Build Process
 
 ### 1. Defining the Perimeter
 I created a **Named Location** within Microsoft Entra ID. This allows the tenant to recognize specific IP ranges or countries as "Trusted" or "Targeted."
@@ -17,7 +17,7 @@ I created a **Named Location** within Microsoft Entra ID. This allows the tenant
 
 ### 2. Policy Configuration
 The policy logic was set to:
-* **Who:** All users.
+* **Who:** All users(make sure to atleast leave one admin account excluded when practicing to avoid locking yourself out).
 * **What:** All Cloud Apps.
 * **Where:** Any location *except* my designated safe countries.
 * **Result:** Block Access.
