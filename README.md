@@ -28,18 +28,10 @@ The policy logic was set to:
 ## ⚠️ Lessons Learned & Troubleshooting
 
 ### Disabling Security Defaults
-One major hurdle I encountered: **You cannot use Conditional Access while "Security Defaults" are enabled.** * Security Defaults provide a basic level of protection but are an "all-or-nothing" setting. To use granular CA policies, these must be turned off.
+One major hurdle I encountered: **You cannot use Conditional Access while "Security Defaults" are enabled.**  Security Defaults provide a basic level of protection but are an "all-or-nothing" setting. To use granular CA policies, these must be turned off.
 * **Location:** `Overview` > `Properties` > `Manage Security Defaults` (at the bottom of the page).
 
 ### The Cache Trap
 **Critical Tip:** After disabling Security Defaults, Azure may still throw an error when you try to save your new CA policy. 
 * **The Fix:** Don't panic and keep clicking save, you need to **log out, clear your browser cache, and log back in**. This forces the portal to recognize the updated tenant state and allows the policy to be created successfully.
 
----------------------------------------------------------------------
-
-## 📈 Future Improvements
-* Implement "What If" tool testing to simulate logins from blocked regions.
-* Integrate Azure Monitor to visualize blocked sign-in attempts on a map.
-* Layer MFA requirements on top of the Geo-block for "Trusted" locations.
-
-**Author:** Benjamin Soko
